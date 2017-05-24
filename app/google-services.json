@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "125477427393",
+    "firebase_url": "https://foodsterredesign1-db52d.firebaseio.com",
+    "project_id": "foodsterredesign1-db52d",
+    "storage_bucket": "foodsterredesign1-db52d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125477427393:android:0bb1034342309dd8",
+        "android_client_info": {
+          "package_name": "com.example.brian.foodsterredesign1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125477427393-k2jsfmfvd6ubpsod6u6bntjakb1lv86o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brian.foodsterredesign1",
+            "certificate_hash": "e3627d548eb4298c0b89229d3aaf866750bfda98"
+          }
+        },
+        {
+          "client_id": "125477427393-nurn3okvtfk621pqmanqn1dibmfb2g3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoNJE8pQUg25uc7_bH4e4Cyu0Ycib5CQ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125477427393-nurn3okvtfk621pqmanqn1dibmfb2g3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

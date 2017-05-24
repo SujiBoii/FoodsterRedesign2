@@ -37,6 +37,11 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private Button buttonRegister;
 
     private ProgressDialog progressDialog;
+    private OnFragmentInteractionListener mListener;
+
+    public RegisterFragment() {
+    }
+
 
     @Nullable
     @Override
@@ -52,6 +57,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
+
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -77,6 +83,12 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+        try {
+            mListener = (OnFragmentInteractionListener) myView.getContext();
+        } catch (ClassCastException e) {
+            throw new ClassCastException(myView.getContext().toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override
@@ -84,14 +96,18 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+            mListener = null;
         }
     }
     public void onClick(View v) {
+
         switch(v.getId()){
             case R.id.buttonRegister:
                 registerUser();
                 break;
             case R.id.textViewSignin:
+                //Aufruf zum Wechseln des Fragments
+                mListener.changeFragment(2);
                 break;
         }
     }

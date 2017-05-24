@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +83,7 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
         } else if (id == R.id.nav_third_layout) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
-                            , new ThirdFragment())
-                    .commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new ThirdFragment()).commit();
 
         }  else if (id == R.id.nav_share) {
 
@@ -97,5 +94,25 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    //Methode um die Fragmente zu wechseln. Jedes Fragment brauch eine eigene ID.
+    public void changeFragment(int id) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if (id == 1) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , new RegisterFragment())
+                    .commit();
+        }
+        else if (id == 2) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , new LoginFragment())
+                    .commit();
+        }
     }
 }
